@@ -1,0 +1,3 @@
+# this should 
+# file to avoid including the virtual environment 
+# (or pytest's cache, or the documentation's build folder).
