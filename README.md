@@ -1,5 +1,5 @@
-![build status](https://travis-ci.org/dan-gittik/foobar.svg?branch=master)
-![coverage](https://codecov.io/gh/dan-gittik/foobar/branch/master/graph/badge.svg)
+![Build Status](https://travis-ci.com/tamarabester/AMAM.svg?branch=master)
+![coverage](https://codecov.io/gh/tamarabester/AMAM/branch/master/graph/badge.svg)
 
 # Foobar
 

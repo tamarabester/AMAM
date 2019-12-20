@@ -1,4 +1,15 @@
-# This script should :
-#creates a virtual environment, 
-#installs the requirements, 
-#and drops a path file to make the project importable from anywhere.
+#!/bin/bash
+
+set -e
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+
+function main {
+    python -m virtualenv .env --prompt "[foobar] "
+    find .env -name site-packages -exec bash -c 'echo "../../../../" > {}/self.pth' \;
+    .env/bin/pip install -U pip
+    .env/bin/pip install -r requirements.txt
+}
+
+
+main "$@"
