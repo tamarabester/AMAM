@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.com/tamarabester/AMAM.svg?branch=master)
+![build status](https://travis-ci.com/tamarabester/AMAM.svg?branch=master)
 ![coverage](https://codecov.io/gh/tamarabester/AMAM/branch/master/graph/badge.svg)
 
 # Foobar
