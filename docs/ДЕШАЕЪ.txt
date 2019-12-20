@@ -1,0 +1,2 @@
+Finally, use Sphinx to generate a documentation project in the docs/ directory, write a bit of documentation, make sure it compiles and looks presentable, and link your account with ReadTheDocs.
+Note that in order for the documentation to be rebuilt whenever you push a new commit, you'd have to set up some webhooks, so please do.
