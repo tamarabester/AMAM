@@ -22,7 +22,7 @@ copyright = '2019, Tamara Bester Arest'
 author = 'Tamara Bester Arest'
 
 # The full version, including alpha/beta/rc tags
-release = '26.06.2020'
+release = '26.1.2020'
 
 
 # -- General configuration ---------------------------------------------------
@@ -39,7 +39,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
 # -- Options for HTML output -------------------------------------------------
