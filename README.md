@@ -3,7 +3,7 @@
 
 # Foobar
 
-An example package. See [full documentation](https://advanced-system-design-foobar.readthedocs.io/en/latest/).
+An example package. See [full documentation](https://amam.readthedocs.io/en/latest/).
 
 ## Installation
 
