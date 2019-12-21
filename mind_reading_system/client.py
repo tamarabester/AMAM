@@ -1,6 +1,6 @@
 
-from connection import Connection
-from thought import Thought
+#from connection import Connection
+#from thought import Thought
 from cli import CommandLineInterface
 
 import datetime as dt
