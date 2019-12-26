@@ -1,11 +1,8 @@
-import socket
-import time
-#from io import BytesIO
-import threading
 from pathlib import Path
-from cli import CommandLineInterface
+import threading
+import time
+import socket
 
-cli = CommandLineInterface()
 class Handler(threading.Thread):
     lock = threading.Lock()
     def __init__(self, connection, dir_path):
@@ -59,30 +56,8 @@ def file_format_time(timeStemp):
     time = paddeded_time[3]+"-"+paddeded_time[4]+"-"+paddeded_time[5]
     return f'{date}_{time}.txt'
 
-
-@cli.command
-def run(address, data):
-    ip, port_as_string = address.split(":")
-    address = (ip, int(port_as_string))
-    dir_path = Path(data)
-    ## setup sockts and connect to a client
-    server = socket.socket() 
-    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
-    server.bind(address) 
-    server.listen(1000) 
-
-    ## connect to client and recive messege
-    while True:
-        try:
-            client_socket, client_address = server.accept()
-            hendler = Handler(client_socket, data)
-            hendler.start()
-        except Exception as error:
-            print(f'ERROR: {error}')
-            break
-    server.close()
-    return 0
-
+def run_server():
+    pass
 
 if __name__ == '__main__':
     cli.main()
