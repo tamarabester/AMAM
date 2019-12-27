@@ -36,26 +36,5 @@ class Thought:
         msg = data[20::].decode()
         return Thought(userID, time_stamp, msg)
 
-# import datetime as dt
-# now = dt.datetime.now()
-# t0 = Thought(1,now,"lala")
-# print(f'{t0}')
-# # print(f'{t!r}')
-# t1 = Thought(1,now,"lala")
-# t2 = Thought(1,now,"lal")
-# t3 = Thought(2,now,"lala")
-# t4 = 1
-# # print(t0==t1) # expected True
-# # print(t0==t2) # expected False
-# # print(t0==t3) # expected False
-# # print(t0==t4) # expected False
 
-# now = dt.datetime.now()
-# t0 = Thought(1,dt.datetime(2000, 1, 1, 12, 0),"lala")
-# print(t0)
-# s = t0.serialize()
-# #print(s)
-# thought2 = Thought.deserialize(s)
-# print(thought2)
-# print(t0 == thought2)
 

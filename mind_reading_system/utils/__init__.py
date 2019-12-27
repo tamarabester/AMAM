@@ -1,2 +1,2 @@
-from .connection import Connection
-from .listener import Listener
+from . import connection
+from . import listener

@@ -1,6 +1,5 @@
 import functools
 import http.server
-import re
 from pathlib import Path
 
 
@@ -34,6 +33,9 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data.encode("utf-8"))
         return
+
+def run_webserver(address, dir_path):
+    pass
 
 
 class Website:

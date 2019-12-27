@@ -1,4 +1,4 @@
-from . import Connection
+from .connection import Connection
 import socket
 
 class Listener:
@@ -29,4 +29,4 @@ class Listener:
         return self.start()
 
     def __exit__(self, exception, error, traceback):
-        self.socket.close()
+        self.stop()
