@@ -6,6 +6,7 @@ from .client import upload_thought
 from .server import run_server
 from .webserver import run_webserver
 
+########################## parameter validators ##########################
 
 def ip_validator(s):
     if s == "localhost":
@@ -36,7 +37,9 @@ def validate_address(ctx, param, address):
     except Exception as ex:
         raise click.BadParameter('ADDRESS needs to be in format "ip:port"')
 
+##########################################################################
 
+############################## helpers ###################################
 
 def tupled_address(string_address):
     try:
@@ -52,6 +55,12 @@ def main():
     pass
 
 
+if __name__ == '__main__':
+    main()
+
+##########################################################################
+
+################################# cli ####################################
 
 @main.command('upload_thought', short_help="lala")
 @click.option('--address', callback=validate_address)
@@ -97,6 +106,4 @@ def initiate_server(address, storing_path):
         click.echo(f'ERROR: {error.__traceback__}')
         return 1
 
-
-if __name__ == '__main__':
-    main()
+##########################################################################
