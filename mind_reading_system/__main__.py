@@ -1,9 +1,11 @@
 import click
-
-from client import upload_thought
-from server import run_server
-from webserver import run_webserver
+from pathlib import Path
 import traceback
+
+from .client import upload_thought
+from .server import run_server
+from .webserver import run_webserver
+
 
 def ip_validator(s):
     if s == "localhost":
@@ -63,32 +65,38 @@ def upload(address, user, thought):
     except Exception as error:
         click.echo(f'ERROR: {error}')
         click.echo(f'ERROR: {error.__traceback__}')
-        #traceback.print_tb((error.__traceback__))
         return 1
 
 
-# @cli.command
-# def run(address, data):
-#     ip, port_as_string = address.split(":")
-#     address = (ip, int(port_as_string))
-#     dir_path = Path(data)
-#     ## setup sockts and connect to a client
-#     server = socket.socket() 
-#     server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
-#     server.bind(address) 
-#     server.listen(1000) 
+@main.command('run_server', short_help="tata")
+@click.option('--address', callback=validate_address)
+@click.argument('address',type=str)
+@click.argument('storing_path', type=click.Path(exists=True))
+def initiate_server(address, storing_path):
+    """ Initiates a server in the given ADDRESS, that stores it's data at the given STORING_PATH"""
+    try:    
+        run_server(tupled_address(address), Path(storing_path))
+        print("here")
+    except Exception as error:
+        click.echo(f'ERROR: {error}')
+        click.echo(f'ERROR: {error.__traceback__}')
+        return 1
 
-#     ## connect to client and recive messege
-#     while True:
-#         try:
-#             client_socket, client_address = server.accept()
-#             hendler = Handler(client_socket, data)
-#             hendler.start()
-#         except Exception as error:
-#             print(f'ERROR: {error}')
-#             break
-#     server.close()
-#     return 0
+
+@main.command('run_server', short_help="tata")
+@click.option('--address', callback=validate_address)
+@click.argument('address',type=str)
+@click.argument('storing_path', type=click.Path(exists=True))
+def initiate_server(address, storing_path):
+    """ Initiates a server in the given ADDRESS, that stores it's data at the given STORING_PATH"""
+    try:    
+        run_webserver(tupled_address(address), Path(storing_path))
+        print("here")
+    except Exception as error:
+        click.echo(f'ERROR: {error}')
+        click.echo(f'ERROR: {error.__traceback__}')
+        return 1
+
 
 if __name__ == '__main__':
     main()
